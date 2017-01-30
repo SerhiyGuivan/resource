@@ -1,0 +1,140 @@
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.row {
+  @include clearfix();
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+@mixin row($px) {
+  @include clearfix();
+  margin-left: $px;
+  margin-right: $px;
+}
+@mixin col($width, $padding){
+  float: left;
+  position: relative;
+  width: $width;
+  padding-left: $padding;
+  padding-right: $padding;
+  min-height: 1px;
+}
+@mixin col-md($width, $padding){
+  position: relative;
+  padding-left: $padding;
+  padding-right: $padding;
+  min-height: 1px;
+  @media (min-width: $md-width-min) {
+    float: left;
+    width: $width;
+  }
+}
+.container {
+  @include clearfix();
+    width: 320px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+  @media (min-width: $md-width-min) {
+    width: 1004px;
+  }
+}
+
+.title {
+  font-size: 29px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  &--lg {
+    @extend .title;
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+}
+@mixin title(){
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+@mixin title-md(){
+  font-size: 29px;
+  margin-bottom: 15px;
+}
+@mixin title-lg(){
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 4px 16px;
+  margin-bottom: 0;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  transition: background  500ms ease;
+  &:focus,
+  &:active {
+    outline: none !important;
+  }
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-orange {
+  background: $orange-1;
+  color: #fff;
+  &:hover,
+  &:active {
+    background: $orange-2;
+  }
+}
+.btn-orange-2 {
+  background: $orange-3;
+  color: #000;
+  &:hover,
+  &:active {
+    background: $orange-2;
+  }
+}
+@mixin btn-xs() {
+  font-size: 15px;
+  padding: 2px 8px;
+  line-height: 20px;
+}
+@mixin hidden() {
+    display: none !important;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-round {
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px rgba(0,0,0, 0.14);
+  border-radius: 50%;
+}

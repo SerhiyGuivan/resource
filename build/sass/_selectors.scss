@@ -1,0 +1,32 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:focus {
+  outline: none;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'PfDinTextCondPro', sans-serif;
+  font-size: 17px;
+  line-height: 1.325;
+  color: #000;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+img {
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
